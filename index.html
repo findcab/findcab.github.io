@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girlington Taxi - Professional Taxi Service | Book Now</title>
+    <meta name="description"
+        content="Girlington's trusted taxi service. Fast, reliable, and professional taxi service available 24/7. Book online instantly for best rates.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://findcab.github.io/" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CJE20S6Y1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-3CJE20S6Y1');
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #2F4858;
+            --accent-color: #FFD23F;
+            --text-dark: #1A1A1A;
+            --text-light: #F8F9FA;
+            --bg-light: #F5F5F5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+
+        .navbar {
+            background-color: var(--text-light);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(47, 72, 88, 0.9), rgba(47, 72, 88, 0.9)), url('/api/placeholder/1920/600');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            padding: 120px 0;
+        }
+
+        .booking-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .route-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .price-highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .fleet-card {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .fleet-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .review-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 60px;
+            color: var(--primary-color);
+            opacity: 0.1;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+        }
+
+        .benefits-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .benefits-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .contact-info {
+            background: var(--secondary-color);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .service-area-map {
+            height: 400px;
+            background: #eee;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .special-offer {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .booking-form {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1 class="h3 m-0">Girlington Taxi</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#routes">Routes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fleet">Fleet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn cta-button ms-3" href="#book">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="book">
+        <div class="container">
+            <div class="align-items-center">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <h2 class="display-4 fw-bold mb-4">Your Trusted Taxi Service in Girlington</h2>
+                    <p class="lead mb-4">Professional drivers, comfortable vehicles, and competitive rates. Book your
+                        ride now and experience the difference.</p>
+                    <div class="d-flex gap-3">
+                        <button class="cta-button btn-lg">Call Now</button>
+                        <!-- <button class="btn btn-outline-light btn-lg">Call Now</button> -->
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Why Choose Girlington Taxi?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-clock fa-3x mb-4" style="color: var(--primary-color)"></i>
+                        <h3>24/7 Service</h3>
+                        <p>Available round the clock for your convenience. Book anytime, anywhere.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-shield-alt fa-3x mb-4" style="color: var(--primary-color)"></i>
+                        <h3>Safe Travel</h3>
+                        <p>Licensed drivers, insured vehicles, and GPS tracking for your safety.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-pound-sign fa-3x mb-4" style="color: var(--primary-color)"></i>
+                        <h3>Best Rates</h3>
+                        <p>Competitive pricing with no hidden charges. Get instant quotes online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes Section -->
+    <section class="py-5" id="routes">
+        <div class="container">
+            <h2 class="section-title">Popular Routes & Fixed Fares</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="route-card">
+                        <h3>Girlington to Leeds Bradford Airport</h3>
+                        <p>Distance: 8 miles | Duration: ~25 mins</p>
+                        <p class="price-highlight">Fixed fare: £25</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="route-card">
+                        <h3>Girlington to Bradford City Centre</h3>
+                        <p>Distance: 2 miles | Duration: ~10 mins</p>
+                        <p class="price-highlight">Fixed fare: £8</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="route-card">
+                        <h3>Girlington to Leeds City Centre</h3>
+                        <p>Distance: 9 miles | Duration: ~30 mins</p>
+                        <p class="price-highlight">Fixed fare: £30</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="route-card">
+                        <h3>Girlington to Manchester Airport</h3>
+                        <p>Distance: 50 miles | Duration: ~1h 15mins</p>
+                        <p class="price-highlight">Fixed fare: £95</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section class="py-5 bg-light" id="fleet">
+        <div class="container">
+            <h2 class="section-title">Our Fleet</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="fleet-card">
+                        <!-- <img src="/api/placeholder/400/300" alt="Standard Sedan" class="fleet-img"> -->
+                        <h3>Standard Sedan</h3>
+                        <p>Comfortable ride for up to 4 passengers</p>
+                        <ul class="list-unstyled">
+                            <li>✓ 4 Passengers</li>
+                            <li>✓ 2 Suitcases</li>
+                            <li>✓ Air Conditioning</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fleet-card">
+                        <!-- <img src="/api/placeholder/400/300" alt="Executive Car" class="fleet-img"> -->
+                        <h3>Executive Car</h3>
+                        <p>Luxury travel for business or special occasions</p>
+                        <ul class="list-unstyled">
+                            <li>✓ 4 Passengers</li>
+                            <li>✓ 3 Suitcases</li>
+                            <li>✓ Premium Interior</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fleet-card">
+                        <!-- <img src="/api/placeholder/400/300" alt="MPV/Minivan" class="fleet-img"> -->
+                        <h3>MPV/Minivan</h3>
+                        <p>Spacious vehicle for groups or extra luggage</p>
+                        <ul class="list-unstyled">
+                            <li>✓ 8 Passengers</li>
+                            <li>✓ 6 Suitcases</li>
+                            <li>✓ Perfect for Groups</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="special-offer">
+                        <h3>10% OFF Airport Transfers</h3>
+                        <p>Book your airport transfer in advance and save 10% on your journey.</p>
+                        <button class="btn btn-light">Book Now</button>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+                <!-- <div class="col-md-6">
+                    <div class="special-offer">
+                        <h3>Corporate Account Benefits</h3>
+                        <p>Register your business for special rates and priority booking.</p>
+                        <button class="btn btn-light">Learn More</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p>"Excellent service! Driver was on time and very professional. Will definitely use again for
+                            my
+                            airport transfers."</p>
+                        <strong>- Sarah Johnson</strong>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p>"Regular user of Girlington Taxi for business trips. Reliable service and competitive rates.
+                            Highly recommended!"</p>
+                        <strong>- Michael Brown</strong>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p>"Best taxi service in Girlington! Clean cars and friendly drivers. My go-to choice for all
+                            local
+                            trips."</p>
+                        <strong>- Emma Wilson</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Process -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Easy Booking Process</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Book Online</h3>
+                        <p>Use our quick booking form or call us directly</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Get Confirmation</h3>
+                        <p>Receive instant booking confirmation</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Track Your Ride</h3>
+                        <p>Track your taxi in real-time</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Enjoy Your Trip</h3>
+                        <p>Travel comfortably to your destination</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Service Area</h2>
+            <div class="service-area-map">
+                <!-- <img src="/" alt="Service Area Map" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"> -->
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Areas We Cover</h3>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled benefits-list">
+                                <li>Girlington</li>
+                                <li>Bradford City Centre</li>
+                                <li>Leeds</li>
+                                <li>Shipley</li>
+                                <li>Keighley</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled benefits-list">
+                                <li>Halifax</li>
+                                <li>Huddersfield</li>
+                                <li>Wakefield</li>
+                                <li>York</li>
+                                <li>Manchester</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Airport Services</h3>
+                    <ul class="list-unstyled benefits-list">
+                        <li>Leeds Bradford Airport</li>
+                        <li>Manchester Airport</li>
+                        <li>Liverpool John Lennon Airport</li>
+                        <li>East Midlands Airport</li>
+                        <li>All UK Airports Covered</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <h3>Book Your Taxi</h3>
+                        <div class="mb-4">
+                            <p><i class="fas fa-phone me-2"></i> Call us 24/7:</p>
+                            <h4>0800 123 4567</h4>
+                        </div>
+                        <div class="mb-4">
+                            <p><i class="fas fa-envelope me-2"></i> Email us:</p>
+                            <h4>booking@girlingtontaxi.com</h4>
+                        </div>
+                        <div>
+                            <p><i class="fas fa-map-marker-alt me-2"></i> Find us:</p>
+                            <h4>123 Main Street, Girlington, Bradford</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form class="booking-form">
+                        <h3>Send Us a Message</h3>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Your Phone">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                        </div>
+                        <button class="cta-button w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>About Us</h5>
+                    <p>Girlington's most trusted taxi service, providing safe and reliable transportation 24/7.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Book a Taxi</a></li>
+                        <li><a href="#" class="text-light">Our Services</a></li>
+                        <li><a href="#" class="text-light">Pricing</a></li>
+                        <li><a href="#" class="text-light">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li>Airport Transfers</li>
+                        <li>Local Taxi Service</li>
+                        <li>Corporate Travel</li>
+                        <li>Long Distance</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Girlington Taxi. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light me-3">Privacy Policy</a>
+                    <a href="#" class="text-light me-3">Terms of Service</a>
+                    <a href="#" class="text-light">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
